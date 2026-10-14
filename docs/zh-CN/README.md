@@ -4,7 +4,7 @@
 
 # ReviewWise — AI Mistake Analyzer
 
-专为 AP 课程学生打造的 Chrome 浏览器扩展，通过 Chrome 内置的 Gemini Nano AI 自动分析 College Board AP Classroom 上的选择题，识别学生的思维误区（misconception），并提供苏格拉底式的引导提示，帮助学生自主纠正错误。
+一个 Chrome 浏览器扩展，用 Chrome 内置的 Gemini Nano AI 分析选择题。只要能读取到网页上的题目文字，任何网站都可以使用；针对 College Board AP Classroom 专门优化了题目文字的提取。对每道错题，它会推断最可能的思维误区（misconception），并给出苏格拉底式的引导提示，帮助学生自主纠正错误。
 
 ---
 
@@ -12,9 +12,9 @@
 
 ### 🎯 智能分析
 - **学科识别**：自动识别 13 个 AP 科目，AI 使用对应学科的术语和思维框架
-- **Misconception 识别**：基于 College Board 官方解释（A-D 选项），深度分析学生的思维误区
+- **Misconception 识别**：结合题目和 A–D 选项的官方解释，推断最可能的思维误区
 - **苏格拉底式引导**：不直接给答案，而是通过提问引导学生自主思考
-- **LaTeX 渲染**：完美显示数学公式和物理符号
+- **LaTeX 渲染**：用 LaTeX 渲染数学公式和物理符号
 
 ### 📚 错题本
 - **智能去重**：相同题目自动合并，统计错误次数
@@ -33,7 +33,7 @@
 
 ---
 
-## 🎓 支持的 AP 科目
+## 🎓 可自动识别的 AP 科目
 
 本扩展支持以下 13 个 AP 科目的自动识别：
 
@@ -77,7 +77,7 @@
 
 ### 可选：Supabase 配置
 
-扩展程序无需任何配置即可完美运行。但如果您想启用云同步功能（推荐分析、用户反馈统计），可以配置 Supabase：
+Supabase 是可选的：核心分析和本地错题本不依赖它。如果您想启用云同步功能（推荐分析、用户反馈统计），可以配置 Supabase：
 
 1. 查看 [SETUP_SUPABASE.md](../../SETUP_SUPABASE.md) 获取详细说明
 2. 复制 `supabase-config.example.js` 为 `supabase-config.js` 并填入您的凭据
@@ -137,7 +137,7 @@
 - ✅ **本地 AI**：使用 Chrome 内置的 Gemini Nano，所有分析在设备本地完成
 - ✅ **无网络请求**：核心功能不依赖外部服务器
 - ✅ **数据本地化**：错题本存储在浏览器本地（`chrome.storage.local`）
-- ✅ **匿名反馈**：Supabase 仅存储 URL 哈希（SHA-256），不存原始 URL
+- ✅ **匿名反馈**：可选的 Supabase 反馈只存三个字段：页面 URL 的 SHA-256 哈希、浏览器本地生成的随机 ID、以及你的 👍/👎
 
 ---
 

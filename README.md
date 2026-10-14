@@ -4,7 +4,7 @@
 
 # ReviewWise — AI Mistake Analyzer
 
-A Chrome extension designed for AP students that automatically analyzes multiple-choice questions on College Board AP Classroom using Chrome's built-in Gemini Nano AI. It identifies student misconceptions and provides Socratic guidance to help students self-correct their errors.
+A Chrome extension that analyzes multiple-choice questions with Chrome's built-in Gemini Nano AI. It works on any web page whose question text it can read, and its text extraction is specially tuned for College Board AP Classroom. For each wrong answer it suggests the likely misconception and gives Socratic hints so students can correct the error themselves.
 
 ---
 
@@ -12,9 +12,9 @@ A Chrome extension designed for AP students that automatically analyzes multiple
 
 ### 🎯 Smart Analysis
 - **Subject Detection**: Automatically identifies 13 AP subjects, AI uses subject-specific terminology and frameworks
-- **Misconception Identification**: Deep analysis based on College Board official explanations (A-D options)
+- **Misconception Identification**: Uses the question and the official A–D answer explanations to pinpoint the likely misconception
 - **Socratic Guidance**: Guides students to think independently rather than giving direct answers
-- **LaTeX Rendering**: Perfect display of mathematical formulas and physics symbols
+- **LaTeX Rendering**: Renders mathematical formulas and physics notation with LaTeX
 
 ### 📚 Misconception Bank
 - **Smart Deduplication**: Automatically merges identical questions and tracks error counts
@@ -33,7 +33,7 @@ A Chrome extension designed for AP students that automatically analyzes multiple
 
 ---
 
-## 🎓 Supported AP Subjects
+## 🎓 Automatically Recognized AP Subjects
 
 This extension supports automatic detection of 13 AP subjects:
 
@@ -77,7 +77,7 @@ This extension supports automatic detection of 13 AP subjects:
 
 ### Optional: Supabase Configuration
 
-The extension works perfectly without any configuration. However, if you want to enable cloud sync features (recommended analyses, user feedback statistics), you can configure Supabase:
+Supabase is optional; core analysis and the local misconception bank work without it. If you want to enable cloud sync features (recommended analyses, user feedback statistics), you can configure Supabase:
 
 1. See [SETUP_SUPABASE.md](SETUP_SUPABASE.md) for detailed instructions
 2. Copy `supabase-config.example.js` to `supabase-config.js` and fill in your credentials
@@ -137,7 +137,7 @@ The extension works perfectly without any configuration. However, if you want to
 - ✅ **Local AI**: Uses Chrome's built-in Gemini Nano, all analysis done locally on device
 - ✅ **No Network Requests**: Core functionality doesn't depend on external servers
 - ✅ **Local Data**: Misconception bank stored locally in browser (`chrome.storage.local`)
-- ✅ **Anonymous Feedback**: Supabase only stores URL hashes (SHA-256), not original URLs
+- ✅ **Anonymous Feedback**: Optional Supabase feedback stores only three fields: a SHA-256 hash of the page URL, a random ID generated in your browser, and your 👍/👎
 
 ---
 
