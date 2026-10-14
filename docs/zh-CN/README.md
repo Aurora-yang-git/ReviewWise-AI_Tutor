@@ -2,7 +2,7 @@
 
 ---
 
-# Question Analyzer
+# ReviewWise — AP Question Analyzer
 
 专为 AP 课程学生打造的 Chrome 浏览器扩展，通过 Chrome 内置的 Gemini Nano AI 自动分析 College Board AP Classroom 上的选择题，识别学生的思维误区（misconception），并提供苏格拉底式的引导提示，帮助学生自主纠正错误。
 

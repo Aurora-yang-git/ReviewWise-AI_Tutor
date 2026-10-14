@@ -2,7 +2,7 @@
 
 ---
 
-# Question Analyzer
+# ReviewWise — AP Question Analyzer
 
 A Chrome extension designed for AP students that automatically analyzes multiple-choice questions on College Board AP Classroom using Chrome's built-in Gemini Nano AI. It identifies student misconceptions and provides Socratic guidance to help students self-correct their errors.
 
